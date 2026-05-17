@@ -1,0 +1,9 @@
+# Ignore everything
+*
+# Allow directories so exceptions work
+!*/
+# Do not ignore main.tex
+!resume_cn.tex
+!resume_cn.pdf
+# Keep .gitignore tracked
+!.gitignore
