@@ -1,223 +1,99 @@
-\documentclass[a4paper,11pt]{article}
-
-\usepackage[empty]{fullpage}
+﻿\documentclass[a4paper,11pt]{article}
+\usepackage[margin=1.5cm]{geometry}
 \usepackage{titlesec}
-\usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 \usepackage{tabularx}
 \usepackage[UTF8]{ctex}
 \usepackage{fontspec}
-
-% 字体设置
+% 保留原模板的宋体正文、分节横线与左右对齐结构。
 \setmainfont{Times New Roman}
-\setCJKmainfont{SimSun}
-
-%-----PAGE SETUP---------------------------------------------------------------
-
-\addtolength{\oddsidemargin}{-1cm}
-\addtolength{\evensidemargin}{-1cm}
-\addtolength{\textwidth}{2cm}
-\addtolength{\topmargin}{-1cm}
-\addtolength{\textheight}{2cm}
-
+\setCJKmainfont{SimSun}[BoldFont=SimHei]
+\pagestyle{empty}
 \urlstyle{same}
 \raggedbottom
 \raggedright
-\setlength{\tabcolsep}{0cm}
-
-%-----SECTION FORMATTING-------------------------------------------------------
-
-\titleformat{\section}{
-  \vspace{-4pt}\bfseries\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-%-----CUSTOM COMMANDS----------------------------------------------------------
-
-\newcommand{\CVItem}[1]{
-  \item \small{#1}
-}
-
-\newcommand{\CVSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \small#3 & \small #4 \\
-    \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\CVProjectHeading}[2]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-    \end{tabular*}\vspace{-4pt}
-}
-
-\newcommand{\CVSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0cm, label={}, itemsep=3pt, topsep=2pt, parsep=0pt, partopsep=0pt]
-}
-
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\linespread{1.03}
+\titleformat{\section}{\bfseries\raggedright\large}{}{0em}{}[\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+\newcommand{\CVItem}[1]{\item\small #1}
+\newcommand{\CVSubheading}[4]{%
+  \item\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}
+    \textbf{#1} & #2 \\
+    \small #3 & \small #4
+  \end{tabularx}\vspace{-3pt}}
+\newcommand{\CVProjectHeading}[3]{%
+  \item\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}
+    \textbf{#1} & #3 \\
+    \multicolumn{2}{@{}l@{}}{\small #2}
+  \end{tabularx}\vspace{-3pt}}
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0pt,label={},itemsep=4pt,topsep=0pt,parsep=0pt,partopsep=0pt]}
 \newcommand{\CVSubHeadingListEnd}{\end{itemize}}
-
-\newcommand{\CVItemListStart}{
-  \begin{itemize}[leftmargin=0.45cm, itemsep=2pt, topsep=2pt, parsep=0pt, partopsep=0pt]
-}
-
+\newcommand{\CVItemListStart}{\begin{itemize}[leftmargin=0.4cm,label=\textbullet,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt]}
 \newcommand{\CVItemListEnd}{\end{itemize}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-%------------------------------------------------------------------------------
-% CV STARTS HERE
-%------------------------------------------------------------------------------
-
 \begin{document}
-
-%-----HEADING------------------------------------------------------------------
-
 \begin{center}
-  {\LARGE \textbf{张天翊}} \\ \vspace{2pt}
-  \small 中国上海市浦东新区 $|$
-  +86 13307187701 $|$
+  {\LARGE\textbf{张天翊}}\\[2pt]
+  \small 中国上海市浦东新区 $|$ +86 13307187701 $|$
   \href{mailto:zhangtianyi2023aa@163.com}{zhangtianyi2023aa@163.com}
 \end{center}
-
-%-----EDUCATION----------------------------------------------------------------
-
+\vspace{-9pt}
 \section{教育背景}
 \CVSubHeadingListStart
-
-\CVSubheading
-{精密科学仪器理学硕士}
-{预计 2026 -- 2027}
-{南洋理工大学 （NTU）}
-{新加坡}
-\CVItemListStart
-  \CVItem{研究方向包括半导体仪器、精密电子系统、传感技术、先进硬件集成与人工智能。}
-\CVItemListEnd
-
-\CVSubheading
-{机械工程及其自动化学士 \emph{\small{（一等荣誉学位）}}}
-{2023年9月 -- 2026年6月}
-{伦敦大学学院（UCL）}
-{英国伦敦}
-\CVItemListStart
-  \CVItem{获得一等荣誉学位，约等同于中国 GPA 3.7+/4.0。}
-  \CVItem{相关课程包括控制系统、计算建模、算法开发、嵌入式系统与实时系统。}
-\CVItemListEnd
-
+  \CVSubheading{南洋理工大学}{2026.08 -- 2027.06（预计）}
+    {精密科学仪器硕士}{新加坡}
+  {\small 获南洋理工大学研究生奖学金资助；方向：半导体仪器、精密电子与传感系统。\par}
+  \CVSubheading{伦敦大学学院（UCL）}{2023.09 -- 2026.06}
+    {机械工程工学学士 $|$ 一等荣誉学位}{英国伦敦}
 \CVSubHeadingListEnd
-
-%-----SKILLS-------------------------------------------------------------------
-
-\section{技能}
-\small{
-\textbf{编程语言：} Python、Java、C++、MATLAB、Shell、Verilog \\[4pt]
-
-\textbf{半导体与验证工具：} Synopsys VCS、Verdi、Linux、Perforce、RTL 自动化、Regression Testing \\[4pt]
-
-\textbf{软件与数据系统：} FastAPI、Streamlit、SQL、Git、数据处理流程、统计预测 \\[4pt]
-
-\textbf{工程软件：} MATLAB Simulink、LabVIEW、ANSYS、Fusion 360
-}
-
-%-----WORK EXPERIENCE----------------------------------------------------------
-
-\section{实习经历}
+\section{工作经历}
 \CVSubHeadingListStart
-
-\CVSubheading
-{助理工程师，MSIP 部门}
-{2024年7月 -- 至今}
-{超威半导体公司（AMD）}
-{上海 / 伦敦}
-\CVItemListStart
-  \CVItem{参与 AMD 加速器项目中的 Memory Read/Write IP 开发。}
-  \CVItem{开发自动化与 AI 辅助验证脚本，用于大规模 SoC 信号检查与 Traffic Analysis。}
-  \CVItem{搭建 RTL 自动错误注入框架，提高验证鲁棒性与功能覆盖率评估效率。}
-  \CVItem{使用 Linux、Shell、Python、Perforce、Synopsys VCS 与 Verdi 维护 Regression 与 Validation 工作流。}
-  \CVItem{通过集成智能命令纠错功能，优化内部 AI 脚本工具并降低用户输入错误率。}
-\CVItemListEnd
-
+  \CVSubheading{超威半导体（AMD）}{2024.07 -- 至今}
+    {Assistant Project Engineer（助理项目工程师），MSIP 部门，SRDC}{上海}
+  \CVItemListStart
+    \CVItem{参与 AMD 加速器项目的存储器读写 IP 开发，支持相关 RTL 设计与验证工作。}
+    \CVItem{使用 Python 和 Shell 开发 SoC 信号检查、流量分析及 RTL 错误注入工具，结合 VCS、Verdi 和 Perforce 支持回归测试与验证分析。}
+    \CVItem{参与搭建代码提交实时分析平台，自动分析提交记录并统计 AI 辅助开发使用情况，为工程团队评估 AI 工具应用情况提供数据支持。}
+    \CVItem{参与设计 AI 辅助 Verilog 调试编排框架，基于错误特征、调试阶段和设计上下文动态评分并选择专业化 Skill，使调试方法与具体问题相匹配。}
+  \CVItemListEnd
 \CVSubHeadingListEnd
-
-%-----PROJECTS-----------------------------------------------------------------
-
+\section{专业技能}
+{\small
+\textbf{编程语言：}Python、C++、Java、Verilog、Shell、MATLAB\\
+\textbf{芯片验证与 EDA：}Synopsys VCS、Verdi、RTL 自动化、回归测试、错误注入\\
+\textbf{软件与开发工具：}Linux、Git、Perforce、SQL、FastAPI、Streamlit\par}
 \section{项目经历}
 \CVSubHeadingListStart
-
-\CVProjectHeading
-{电动滑板车能耗优化路径规划 $|$ \emph{\small{图算法 / OSM}}}
-{2026}
-\CVItemListStart
-  \CVItem{基于真实地图与海拔数据，开发电动滑板车能耗建模仿真框架。}
-  \CVItem{结合地形与交通条件，自定义能耗边权并实现基于图算法的路径规划。}
-  \CVItem{设计融合再生制动分析与能耗优化路径规划的混合优化策略。}
-  \CVItem{构建自动化仿真流程，实现大规模城市路线评估与统计比较。}
-\CVItemListEnd
-
-\CVProjectHeading
-{挂车避障路径规划系统 $|$ \emph{\small{A* 算法 / 运动学约束}}}
-{2023}
-\CVItemListStart
-  \CVItem{基于改进 A* 搜索算法，开发带挂车系统的约束路径规划框架。}
-  \CVItem{将非完整车辆动力学、转向连续性约束与碰撞包络检测集成至规划启发函数中。}
-  \CVItem{在兼顾计算效率与路径最优性的前提下，生成可动态执行的避障轨迹。}
-\CVItemListEnd
-
-\CVProjectHeading
-{新加坡移民数据管理系统 $|$ \emph{\small{FastAPI / Streamlit / SQL}}}
-{2025}
-\CVItemListStart
-  \CVItem{为新加坡移民与关卡局（ICA）开发全栈数据管理平台。}
-  \CVItem{基于 FastAPI 设计后端 API 与数据库结构，实现旅客记录管理与数据分析。}
-  \CVItem{开发 Streamlit 可视化仪表盘，用于运营监控、数据交互与可视化分析。}
-  \CVItem{构建短期预测模型，用于估计未来入境旅客数量趋势。}
-  \CVItem{集成自动化数据处理流程，以支持业务决策工作流。}
-\CVItemListEnd
-
+  \CVProjectHeading{面向软件工程与 EDA 自动化的评估驱动型 Agent Skill 系统}
+    {Python / LLM Agents / Evaluation Harness / EDA Automation}{2026}
+  \CVItemListStart
+    \CVItem{构建可复用的 Agent Skill 模块，封装工程规范、执行步骤与工具使用要求；开发本地 Workflow Runner，支持任务与 Skill 组装及提示词预检。}
+    \CVItem{开发结构化任务数据集、评分规则与离线评估框架，通过回归测试校验运行记录和评分逻辑，并支持基准对比条件校验及 CSV 结果导出。}
+    \CVItem{面向调试与 EDA 工作流推进 Skill 路由扩展，计划结合任务状态、错误特征和执行上下文选择专业化 Skill。}
+  \CVItemListEnd
+  \CVProjectHeading{电动滑板车能耗感知路径优化}
+    {Python / Graph Algorithms / OpenStreetMap}{2026}
+  \CVItemListStart
+    \CVItem{基于真实地图与高程数据开发 Python 仿真，结合地形和交通条件设置道路网络的能耗边权，支持路线能耗建模与分析。}
+    \CVItem{实现基于图搜索的能耗感知路径优化与再生制动分析，对比不同城市出行场景下的路线能耗，为路径选择提供依据。}
+  \CVItemListEnd
+  \CVProjectHeading{全栈出入境数据管理与分析系统}
+    {FastAPI / Streamlit / SQL}{2025}
+  \CVItemListStart
+    \CVItem{开发面向新加坡出入境与旅客流量数据的全栈管理和分析平台，使用 FastAPI 构建后端、SQL 管理数据，并通过 Streamlit 提供交互界面。}
+    \CVItem{实现数据处理与短期客流预测流程，分析入境旅客数量变化趋势。}
+  \CVItemListEnd
 \CVSubHeadingListEnd
-
-%-----LEADERSHIP---------------------------------------------------------------
-
-\section{校园经历}
-\CVSubHeadingListStart
-
-\CVProjectHeading
-{UCL Racing Formula E 赛车队}
-{2023 -- 2026}
-\CVItemListStart
-  \CVItem{协助调试 Formula E 赛车中的电机信号与传感器反馈系统。}
-\CVItemListEnd
-
-\CVProjectHeading
-{FRC机器人社团副社长兼项目管理负责人}
-{2020 -- 2023}
-\CVItemListStart
-  \CVItem{负责机器人控制模块的搭建与调试，并参加 FRC 中国区域赛。}
-\CVItemListEnd
-
-\CVSubHeadingListEnd
-
-%-----AWARDS-------------------------------------------------------------------
-
-\section{荣誉奖项}
-\CVSubHeadingListStart
-
-\CVProjectHeading
-{英国物理奥林匹克竞赛金奖}
-{2022}
-
-\CVSubHeadingListEnd
-
-%-----ADDITIONAL INFORMATION---------------------------------------------------
-
-\section{其他信息}
-\small{
-\textbf{语言：} 中文（母语）、英语（IELTS 7.5） \\[4pt]
-
-\textbf{兴趣爱好：} 足球、乒乓球、音乐剧、旅行
-}
-
+\section{校园经历与奖项}
+{\small
+\textbf{UCL Racing Formula E 车队}\hfill 2023 -- 2026\\
+协助调试赛车电机信号与传感器反馈系统。\\
+\textbf{机器人社团副主席及项目控制负责人}\hfill 2020 -- 2023\\
+组织搭建与调试机器人控制模块，参加 FRC 中国区域赛。\\
+\textbf{英国物理奥林匹克竞赛金奖}\hfill 2022\par}
+\section{语言能力}
+{\small 普通话：母语\quad $|$ \quad 英语：IELTS 7.5}
 \end{document}
